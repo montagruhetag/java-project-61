@@ -4,19 +4,24 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        var games = new String[] {"Exit", "Greet"};
+        var games = new String[] {"Exit", "Greet", "Even"};
         for (int i = 0; i < games.length; i++) {
             System.out.printf("%d - %s\n", i, games[i]);
         }
 
         var scanner = new Scanner(System.in);
+        System.out.print("Your choice: ");
         int input = scanner.nextInt();
         switch (input) {
             case 0:
                 System.exit(0);
                 break;
             case 1:
-                Cli.greeting();
+                Cli.greet(scanner);
+                break;
+            case 2:
+                Cli.greet(scanner);
+                Even.play(scanner);
                 break;
         }
         scanner.close();

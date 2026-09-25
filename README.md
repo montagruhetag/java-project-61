@@ -1,4 +1,5 @@
 # Игры разума (Java)
+[![asciicast](https://asciinema.org/a/IQUREjEvRQ3lvG7g.svg)](https://asciinema.org/a/IQUREjEvRQ3lvG7g)
 
 [![hexlet-check](https://github.com/montagruhetag/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/montagruhetag/java-project-61/actions)
 
