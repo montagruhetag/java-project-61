@@ -6,3 +6,9 @@ run-dist:
 inst-dist:
 	./gradlew clean
 	./gradlew installDist
+
+linter-check:
+	./gradlew spotlessCheck
+
+linter-apply:
+	./gradlew spotlessApply
