@@ -2,6 +2,7 @@ import org.gradle.api.internal.plugins.MainClass
 
 plugins {
     id("java")
+    id("com.diffplug.spotless") version "8.10.2"
     application
 }
 
@@ -22,6 +23,20 @@ tasks.test {
     useJUnitPlatform()
 }
 
+tasks.getByName("run", JavaExec::class) {
+    standardInput = System.`in`
+}
+
 application {
     mainClass.set("hexlet.code.App")
+}
+
+spotless {
+    java {
+        importOrder()
+        removeUnusedImports()
+        googleJavaFormat().aosp()
+        formatAnnotations()
+        leadingTabsToSpaces(4)
+    }
 }
