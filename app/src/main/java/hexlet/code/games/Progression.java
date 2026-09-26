@@ -12,7 +12,7 @@ public class Progression {
             int step = Utils.nextRandomInt(1, 10);
             int start = Utils.nextRandomInt(100);
             var series = Utils.generateRandomSeries(len, step, start);
-            int guess = Utils.nextRandomInt(1, len);
+            int guess = Utils.nextRandomInt(len);
             System.out.print("Question:");
             for (int i = 0; i < series.length; i++) {
                 var format = i == guess ? " .." : " %d";

@@ -11,7 +11,7 @@ public class GCD {
             int number1 = Utils.nextRandomInt(100);
             int number2 = Utils.nextRandomInt(100);
             int divisor = Utils.gcd(number1, number2);
-            System.out.printf("Questions: %d %d\n", number1, number2);
+            System.out.printf("Question: %d %d\n", number1, number2);
             System.out.print("Your answer: ");
             int answer = scanner.nextInt();
             if (answer != divisor) {

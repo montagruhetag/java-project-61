@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Engine {
     public static void menu() {
         var games = new String[] {"Greet", "Even", "Calc", "GCD", "Progression", "Prime"};
+        System.out.println("Please enter the game number and press Enter.");
         for (int i = 0; i < games.length; i++) {
             System.out.printf("%d - %s\n", i + 1, games[i]);
         }
@@ -30,8 +31,10 @@ public class Engine {
                     default -> false;
                 };
 
-        var messageFormat = isWin ? "Congratulations, %s!\n" : "Let's try again, %s!\n";
-        System.out.printf(messageFormat, Cli.name);
+        if (input != 1) {
+            var messageFormat = isWin ? "Congratulations, %s!\n" : "Let's try again, %s!\n";
+            System.out.printf(messageFormat, Cli.name);
+        }
         scanner.close();
     }
 }

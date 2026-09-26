@@ -11,7 +11,7 @@ public class Calculator {
         while (streak != 3) {
             int number1 = Utils.nextRandomInt(100);
             int number2 = Utils.nextRandomInt(100);
-            int operation = Utils.nextRandomInt(2);
+            int operation = Utils.nextRandomInt(operations.length);
             int result =
                     switch (operation) {
                         case 0 -> number1 + number2;

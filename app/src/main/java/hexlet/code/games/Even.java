@@ -21,7 +21,7 @@ public class Even {
             }
 
             System.out.printf(
-                    "'%s' is wrong answer ;(. Correct was '%s'.\n", answer, isEven ? "yes" : "no");
+                    "'%s' is wrong answer ;(. Correct answer was '%s'.\n", answer, isEven ? "yes" : "no");
             return false;
         }
         return true;

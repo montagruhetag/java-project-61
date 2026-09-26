@@ -18,7 +18,7 @@ public class Prime {
                 System.out.println("Correct!");
             } else {
                 System.out.printf(
-                        "'%s' is wrong answer ;(. Correct was '%s'.\n",
+                        "'%s' is wrong answer ;(. Correct answer was '%s'.\n",
                         answer, isPrime ? "yes" : "no");
                 return false;
             }

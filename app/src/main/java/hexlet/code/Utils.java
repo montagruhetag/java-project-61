@@ -28,7 +28,7 @@ public class Utils {
     }
 
     public static boolean isPrimeNumber(int number) {
-        if (number < 1) {
+        if (number <= 1) {
             return false;
         }
 
