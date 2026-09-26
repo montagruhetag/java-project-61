@@ -1,18 +1,18 @@
 package hexlet.code.games;
 
-import static hexlet.code.Engine.MAX_PLAYABLE_NUMBER;
+import static hexlet.code.Engine.*;
 
 import hexlet.code.Utils;
 
 public class Even {
-    public static final String GREETINGS =
-            "Answer 'yes' if the number is even, otherwise answer 'no'.";
-    public static String question;
-    public static String answer;
+    private static final String RULE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-    public static void nextRound() {
-        int number = Utils.nextRandomInt(MAX_PLAYABLE_NUMBER);
-        question = String.valueOf(number);
-        answer = number % 2 == 0 ? "yes" : "no";
+    public static String generateGame(String[][] rounds) {
+        for (var round : rounds) {
+            int number = Utils.nextRandomInt(MAX_PLAYABLE_NUMBER);
+            round[QUESTION_INDEX] = String.valueOf(number);
+            round[ANSWER_INDEX] = number % 2 == 0 ? "yes" : "no";
+        }
+        return RULE;
     }
 }

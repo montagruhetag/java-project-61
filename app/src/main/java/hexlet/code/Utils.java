@@ -1,10 +1,6 @@
 package hexlet.code;
 
-import java.util.Scanner;
-
 public class Utils {
-    public static Scanner scanner;
-
     public static int nextRandomInt(int max) {
         return nextRandomInt(0, max);
     }

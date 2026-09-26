@@ -1,85 +1,45 @@
 package hexlet.code;
 
 import hexlet.code.games.*;
+import java.util.Scanner;
 
 public class Engine {
-    public static String[] games = {"Even", "Calc", "GCD", "Progression", "Prime"};
-
-    public static final int MAX_PLAYABLE_NUMBER = 100;
-    private static int selectedGame = 0;
-    private static final int MAX_STREAK = 3;
     private static final String WRONG_ANSWER_TEMPLATE =
             "'%s' is wrong answer ;(. Correct answer was '%s'.\nLet's try again, %s!";
 
-    public static void start() {
-        System.out.println(getGreetings());
-        int streak = 0;
-        while (streak != MAX_STREAK) {
-            nextRound();
-            var question = getQuestion();
-            var answer = getAnswer(question);
-            var correctAnswer = getCorrectAnswer();
-            if (!answer.equals(correctAnswer)) {
-                System.out.println(String.format(WRONG_ANSWER_TEMPLATE, answer, correctAnswer, Cli.name));
+    public static final int MAX_PLAYABLE_NUMBER = 100;
+    public static final int QUESTION_INDEX = 0;
+    public static final int ANSWER_INDEX = 1;
+
+    public static void start(String rule, String[][] rounds, Scanner scanner) {
+        var userName = getUserName(scanner);
+        System.out.println(rule);
+        for (var round : rounds) {
+            var answer = getAnswer(round[QUESTION_INDEX], scanner);
+            if (!answer.equals(round[ANSWER_INDEX])) {
+                System.out.println(
+                        String.format(
+                                WRONG_ANSWER_TEMPLATE, answer, round[ANSWER_INDEX], userName));
                 return;
             }
-            streak++;
             System.out.println("Correct!");
         }
-        System.out.println(String.format("Congratulations, %s!", Cli.name));
+
+        System.out.println(String.format("Congratulations, %s!", userName));
     }
 
-    public static String getGreetings() {
-        return switch (selectedGame) {
-            case 0 -> Even.GREETINGS;
-            case 1 -> Calculator.GREETINGS;
-            case 2 -> GCD.GREETINGS;
-            case 3 -> Progression.GREETINGS;
-            case 4 -> Prime.GREETINGS;
-            default -> null;
-        };
+    private static String getUserName(Scanner scanner) {
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        var name = scanner.next();
+        System.out.println(String.format("Hello, %s!", name));
+        return name;
     }
 
-    private static String getQuestion() {
-        return switch (selectedGame) {
-            case 0 -> Even.question;
-            case 1 -> Calculator.question;
-            case 2 -> GCD.question;
-            case 3 -> Progression.question;
-            case 4 -> Prime.question;
-            default -> null;
-        };
-    }
-
-    private static String getCorrectAnswer() {
-        return switch (selectedGame) {
-            case 0 -> Even.answer;
-            case 1 -> Calculator.answer;
-            case 2 -> GCD.answer;
-            case 3 -> Progression.answer;
-            case 4 -> Prime.answer;
-            default -> null;
-        };
-    }
-
-    private static void nextRound() {
-        switch (selectedGame) {
-            case 0 -> Even.nextRound();
-            case 1 -> Calculator.nextRound();
-            case 2 -> GCD.nextRound();
-            case 3 -> Progression.nextRound();
-            case 4 -> Prime.nextRound();
-        }
-    }
-
-    public static String getAnswer(String question) {
+    public static String getAnswer(String question, Scanner scanner) {
         System.out.println("Question: " + question);
         System.out.print("Your answer: ");
-        String answer = Utils.scanner.next();
+        String answer = scanner.next();
         return answer;
-    }
-
-    public static void setGame(int game) {
-        selectedGame = game;
     }
 }

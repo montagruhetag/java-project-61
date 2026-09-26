@@ -1,19 +1,20 @@
 package hexlet.code.games;
 
-import static hexlet.code.Engine.MAX_PLAYABLE_NUMBER;
+import static hexlet.code.Engine.*;
 
 import hexlet.code.Utils;
 
 public class Prime {
-    public static final String GREETINGS =
+    private static final String RULE =
             "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    public static String question;
-    public static String answer;
 
-    public static void nextRound() {
-        int number = Utils.nextRandomInt(MAX_PLAYABLE_NUMBER);
-        question = String.valueOf(number);
-        boolean isPrime = Utils.isPrimeNumber(number);
-        answer = isPrime ? "yes" : "no";
+    public static String generateGame(String[][] rounds) {
+        for (var round : rounds) {
+            int number = Utils.nextRandomInt(MAX_PLAYABLE_NUMBER);
+            round[QUESTION_INDEX] = String.valueOf(number);
+            boolean isPrime = Utils.isPrimeNumber(number);
+            round[ANSWER_INDEX] = isPrime ? "yes" : "no";
+        }
+        return RULE;
     }
 }
