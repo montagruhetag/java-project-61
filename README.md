@@ -1,5 +1,4 @@
 # Игры разума (Java)
-[![asciicast](https://asciinema.org/a/IQUREjEvRQ3lvG7g.svg)](https://asciinema.org/a/IQUREjEvRQ3lvG7g)
 
 [![hexlet-check](https://github.com/montagruhetag/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/montagruhetag/java-project-61/actions)
 
@@ -23,7 +22,13 @@ cd java-project-61
 
 ## Использование
 
-<!-- Добавьте примеры запуска и запись asciinema — именно это смотрит работодатель -->
+Доступные игры:
+ - [Greet](https://asciinema.org/a/C6UKQRHLz8BFCpX3)
+ - [Even](https://asciinema.org/a/bea5EkWpAk0BpELF)
+ - [Calc](https://asciinema.org/a/pE8qDeJDH7PgKUgn)
+ - [GCD](https://asciinema.org/a/anMEHLJOme2EA3EV)
+ - [Progression](https://asciinema.org/a/Wb9dkZVakeaEDBAX)
+ - [Prime](https://asciinema.org/a/vE6cWKp9brzsQAhj)
 
 ---
 
