@@ -1,27 +1,19 @@
 package hexlet.code.games;
 
+import static hexlet.code.Engine.MAX_PLAYABLE_NUMBER;
+
 import hexlet.code.Utils;
-import java.util.Scanner;
 
 public class GCD {
-    public static boolean play(Scanner scanner) {
-        System.out.println("Find the greatest common divisor of given numbers.");
-        int streak = 0;
-        while (streak != 3) {
-            int number1 = Utils.nextRandomInt(100);
-            int number2 = Utils.nextRandomInt(100);
-            int divisor = Utils.gcd(number1, number2);
-            System.out.printf("Question: %d %d\n", number1, number2);
-            System.out.print("Your answer: ");
-            int answer = scanner.nextInt();
-            if (answer != divisor) {
-                System.out.printf(
-                        "'%d' is wrong answer ;(. Correct answer was '%d'.\n", answer, divisor);
-                return false;
-            }
-            System.out.println("Correct!");
-            streak++;
-        }
-        return true;
+    public static final String GREETINGS = "Find the greatest common divisor of given numbers.";
+    public static String question;
+    public static String answer;
+
+    public static void nextRound() {
+        int number1 = Utils.nextRandomInt(MAX_PLAYABLE_NUMBER);
+        int number2 = Utils.nextRandomInt(MAX_PLAYABLE_NUMBER);
+        var divisor = String.valueOf(Utils.gcd(number1, number2));
+        question = String.format("%d %d", number1, number2);
+        answer = String.valueOf(divisor);
     }
 }

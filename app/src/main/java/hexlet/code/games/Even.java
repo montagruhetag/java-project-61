@@ -1,29 +1,18 @@
 package hexlet.code.games;
 
+import static hexlet.code.Engine.MAX_PLAYABLE_NUMBER;
+
 import hexlet.code.Utils;
-import java.util.Scanner;
 
 public class Even {
-    public static boolean play(Scanner scanner) {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        int streak = 0;
-        while (streak != 3) {
-            int number = Utils.nextRandomInt(100);
-            System.out.println("Question: " + number);
-            System.out.print("Your answer: ");
-            var answer = scanner.next();
-            var isEven = number % 2 == 0;
+    public static final String GREETINGS =
+            "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    public static String question;
+    public static String answer;
 
-            if ((answer.equals("yes") && isEven) || (answer.equals("no") && !isEven)) {
-                System.out.println("Correct!");
-                streak++;
-                continue;
-            }
-
-            System.out.printf(
-                    "'%s' is wrong answer ;(. Correct answer was '%s'.\n", answer, isEven ? "yes" : "no");
-            return false;
-        }
-        return true;
+    public static void nextRound() {
+        int number = Utils.nextRandomInt(MAX_PLAYABLE_NUMBER);
+        question = String.valueOf(number);
+        answer = number % 2 == 0 ? "yes" : "no";
     }
 }
