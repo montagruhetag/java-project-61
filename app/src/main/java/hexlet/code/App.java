@@ -12,7 +12,7 @@ public class App {
         System.out.println("1 - Greet");
         var games = Engine.games;
         for (int i = 0; i < games.length; i++) {
-            System.out.printf("%d - %s\n", i + gamesOffset, games[i]);
+            System.out.println(String.format("%d - %s", i + gamesOffset, games[i]));
         }
         System.out.println("0 - Exit");
 

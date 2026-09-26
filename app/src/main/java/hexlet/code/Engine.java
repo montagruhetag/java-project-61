@@ -9,7 +9,7 @@ public class Engine {
     private static int selectedGame = 0;
     private static final int MAX_STREAK = 3;
     private static final String WRONG_ANSWER_TEMPLATE =
-            "'%s' is wrong answer ;(. Correct answer was '%s'.\nLet's try again, %s!\n";
+            "'%s' is wrong answer ;(. Correct answer was '%s'.\nLet's try again, %s!";
 
     public static void start() {
         System.out.println(getGreetings());
@@ -20,13 +20,13 @@ public class Engine {
             var answer = getAnswer(question);
             var correctAnswer = getCorrectAnswer();
             if (!answer.equals(correctAnswer)) {
-                System.out.printf(WRONG_ANSWER_TEMPLATE, answer, correctAnswer, Cli.name);
+                System.out.println(String.format(WRONG_ANSWER_TEMPLATE, answer, correctAnswer, Cli.name));
                 return;
             }
             streak++;
             System.out.println("Correct!");
         }
-        System.out.printf("Congratulations, %s!\n", Cli.name);
+        System.out.println(String.format("Congratulations, %s!", Cli.name));
     }
 
     public static String getGreetings() {
