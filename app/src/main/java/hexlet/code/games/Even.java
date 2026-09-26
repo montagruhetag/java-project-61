@@ -5,7 +5,7 @@ import hexlet.code.utils.Random;
 import java.util.Scanner;
 
 public class Even {
-    public static void play(Scanner scanner) {
+    public static boolean play(Scanner scanner) {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int streak = 0;
         while (streak != 3) {
@@ -23,9 +23,8 @@ public class Even {
 
             System.out.printf(
                     "'%s' is wrong answer ;(. Correct was '%s'.\n", answer, isEven ? "yes" : "no");
-            System.out.printf("Let's try again, %s!\n", Cli.name);
-            return;
+            return false;
         }
-        System.out.printf("Congratulations, %s!\n", Cli.name);
+        return true;
     }
 }

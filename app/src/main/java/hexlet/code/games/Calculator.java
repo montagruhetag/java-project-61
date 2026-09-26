@@ -5,7 +5,7 @@ import hexlet.code.utils.Random;
 import java.util.Scanner;
 
 public class Calculator {
-    public static void play(Scanner scanner) {
+    public static boolean play(Scanner scanner) {
         var operations = new char[] {'+', '-', '*'};
         System.out.println("What is the result of the expression?");
         int streak = 0;
@@ -26,12 +26,11 @@ public class Calculator {
             if (answer != result) {
                 System.out.printf(
                         "'%d' is wrong answer ;(. Correct answer was '%d'.\n", answer, result);
-                System.out.println("Let's try again, Sam!");
-                return;
+                return false;
             }
             System.out.println("Correct!");
             streak++;
         }
-        System.out.printf("Congratulations, %s!\n", Cli.name);
+        return true;
     }
 }
