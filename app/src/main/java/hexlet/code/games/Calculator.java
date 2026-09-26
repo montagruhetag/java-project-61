@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-import hexlet.code.utils.Random;
+import hexlet.code.Utils;
 import java.util.Scanner;
 
 public class Calculator {
@@ -10,9 +9,9 @@ public class Calculator {
         System.out.println("What is the result of the expression?");
         int streak = 0;
         while (streak != 3) {
-            int number1 = Random.nextInt(100);
-            int number2 = Random.nextInt(100);
-            int operation = Random.nextInt(2);
+            int number1 = Utils.nextRandomInt(100);
+            int number2 = Utils.nextRandomInt(100);
+            int operation = Utils.nextRandomInt(2);
             int result =
                     switch (operation) {
                         case 0 -> number1 + number2;
