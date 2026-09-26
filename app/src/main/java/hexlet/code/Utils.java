@@ -17,7 +17,7 @@ public class Utils {
         }
         return a;
     }
-    
+
     public static int[] generateRandomSeries(int len, int step, int start) {
         var series = new int[len];
         series[0] = start;
@@ -25,5 +25,20 @@ public class Utils {
             series[i] = series[i - 1] + step;
         }
         return series;
+    }
+
+    public static boolean isPrimeNumber(int number) {
+        if (number < 1) {
+            return false;
+        }
+
+        int divisor = number / 2;
+        while (divisor > 1) {
+            if (number % divisor == 0) {
+                return false;
+            }
+            divisor--;
+        }
+        return true;
     }
 }

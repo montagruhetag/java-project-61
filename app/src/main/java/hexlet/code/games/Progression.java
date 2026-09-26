@@ -32,6 +32,4 @@ public class Progression {
         }
         return true;
     }
-
-    
 }
