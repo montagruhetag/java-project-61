@@ -4,7 +4,7 @@ public class Utils {
     public static int nextRandomInt(int max) {
         return nextRandomInt(0, max);
     }
-    
+
     public static int nextRandomInt(int min, int max) {
         return (int) ((Math.random() * (max - min)) + min);
     }
@@ -16,5 +16,14 @@ public class Utils {
             b = temp % b;
         }
         return a;
+    }
+    
+    public static int[] generateRandomSeries(int len, int step, int start) {
+        var series = new int[len];
+        series[0] = start;
+        for (int i = 1; i < series.length; i++) {
+            series[i] = series[i - 1] + step;
+        }
+        return series;
     }
 }

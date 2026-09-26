@@ -3,11 +3,12 @@ package hexlet.code;
 import hexlet.code.games.Calculator;
 import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class Engine {
     public static void menu() {
-        var games = new String[] {"Greet", "Even", "Calc", "GCD"};
+        var games = new String[] {"Greet", "Even", "Calc", "GCD", "Progression"};
         for (int i = 0; i < games.length; i++) {
             System.out.printf("%d - %s\n", i + 1, games[i]);
         }
@@ -27,6 +28,7 @@ public class Engine {
                     case 2 -> Even.play(scanner);
                     case 3 -> Calculator.play(scanner);
                     case 4 -> GCD.play(scanner);
+                    case 5 -> Progression.play(scanner);
                     default -> false;
                 };
 
