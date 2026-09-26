@@ -7,10 +7,11 @@ import java.util.Scanner;
 
 public class Engine {
     public static void menu() {
-        var games = new String[] {"Exit", "Greet", "Even", "Calc"};
+        var games = new String[] {"Greet", "Even", "Calc"};
         for (int i = 0; i < games.length; i++) {
-            System.out.printf("%d - %s\n", i, games[i]);
+            System.out.printf("%d - %s\n", i + 1, games[i]);
         }
+        System.out.println("0 - Exit");
 
         var scanner = new Scanner(System.in);
         System.out.print("Your choice: ");

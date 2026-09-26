@@ -43,4 +43,5 @@ bin/
 .DS_Store
 
 # asciinema
+demos/
 *.cast
