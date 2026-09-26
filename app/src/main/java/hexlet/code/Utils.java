@@ -1,18 +1,20 @@
 package hexlet.code;
 
 public class Utils {
-    public static int nextRandomInt(int to) {
-        return (int) (Math.random() * (to + 1));
+    public static int nextRandomInt(int max) {
+        return nextRandomInt(0, max);
+    }
+    
+    public static int nextRandomInt(int min, int max) {
+        return (int) ((Math.random() * (max - min)) + min);
     }
 
-    public static int gcd(int number1, int number2) {
-        int divisor = Math.min(number1, number2);
-        while (divisor > 1) {
-            if (number1 % divisor == 0 && number2 % divisor == 0) {
-                return divisor;
-            }
-            divisor--;
+    public static int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = a;
+            a = b;
+            b = temp % b;
         }
-        return divisor;
+        return a;
     }
 }
